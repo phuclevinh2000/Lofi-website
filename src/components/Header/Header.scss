@@ -5,7 +5,7 @@
   width: 100%;
   height: 10%;
   z-index: 10;
-  background-image: linear-gradient(180deg, rgba(98, 98, 98, 0.8), transparent);
+  background-image: linear-gradient(180deg, rgba(66, 65, 65, 0.8), transparent);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,14 +24,13 @@
   .nav-menu {
     display: flex;
     flex: 1;
-    margin-left: 25px;
     justify-content: flex-end;
-    margin: 0 10px;
+    margin: 0 5px;
 
     a {
       display: flex;
       align-items: center;
-      padding: 0 25px;
+      padding: 0 20px;
       cursor: pointer;
       text-decoration: none;
       color: white;

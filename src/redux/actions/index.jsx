@@ -1,9 +1,14 @@
 import { auth, provider } from '../../firebase';
-import { SET_USER } from '../constantsType/actionType';
+import { SET_USER, SET_MODE } from '../constantsType/actionType';
 
 export const setUser = (payload) => ({
   type: SET_USER,
   user: payload,
+});
+
+export const setMode = (payload) => ({
+  type: SET_MODE,
+  mode: payload,
 });
 
 export function signInAPI() {
@@ -11,7 +16,6 @@ export function signInAPI() {
     auth
       .signInWithPopup(provider)
       .then((payload) => {
-        // console.log(payload.user);
         dispatch(setUser(payload.user));
       })
       .catch((error) => alert(error.message));
@@ -36,5 +40,14 @@ export function getUserAuth() {
         dispatch(setUser(user));
       }
     });
+  };
+}
+
+export function changeDayNight(currentStatus) {
+  let status;
+  if (currentStatus === 'day') status = 'night';
+  else if (currentStatus === 'night') status = 'day';
+  return (dispatch) => {
+    dispatch(setMode(status));
   };
 }

@@ -1,23 +1,27 @@
 import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { signOutAPI, signInAPI } from '../../redux/actions';
+import { signOutAPI, changeDayNight } from '../../redux/actions';
 import './Header.scss';
 import { Link } from 'react-router-dom';
+import DarkLightSwitch from '../DarkLightSwitch/DarkLightSwitch';
 
 const Header = () => {
   const data = useSelector((state) => state.userState);
+  const daynight = useSelector((state) => state.modeState);
   const dispatch = useDispatch();
 
   const { user } = data;
+  const { mode } = daynight;
 
   const signOutHandler = () => {
     dispatch(signOutAPI());
   };
 
-  const signInHandler = () => {
-    dispatch(signInAPI());
+  const daynightHandler = () => {
+    dispatch(changeDayNight(mode));
   };
+
   return (
     <nav className='wrap'>
       <Link to='/home'>
@@ -31,14 +35,6 @@ const Header = () => {
         <a
           target='_blank'
           rel='noreferrer'
-          href='https://www.linkedin.com/in/phuc-le-vinh/'
-        >
-          <i className='fab fa-linkedin'></i>
-          <span>Linkedin</span>
-        </a>
-        <a
-          target='_blank'
-          rel='noreferrer'
           href='https://github.com/phuclevinh2000'
         >
           <i className='fab fa-github'></i>
@@ -46,18 +42,16 @@ const Header = () => {
         </a>
       </div>
       <div className='nav-menu'>
-        <Link to='/user'>
-          {user && user.photoURL ? (
-            <img src={user.photoURL} alt='' />
-          ) : (
-            <img src='/assets/icons/user.svg' alt='' />
-          )}
+        <div onClick={daynightHandler}>
+          <DarkLightSwitch theme={mode} />
+        </div>
 
-          {user && user.displayName ? (
-            <span>{user.displayName}</span>
-          ) : (
-            <span>New User</span>
-          )}
+        <button>hihihihi</button>
+      </div>
+      <div className='nav-menu'>
+        <Link to='/user'>
+          {user && user.photoURL && <img src={user.photoURL} alt='' />}
+          {user && user.displayName && <span>{user.displayName}</span>}
         </Link>
         {user ? (
           <Link to='/' onClick={signOutHandler}>
@@ -65,7 +59,7 @@ const Header = () => {
             <span>Log Out</span>
           </Link>
         ) : (
-          <Link to='/' onClick={signInHandler}>
+          <Link to='/login'>
             <i className='fas fa-sign-in-alt'></i>
             <span>Log In</span>
           </Link>

@@ -16,7 +16,7 @@ const Login = () => {
 
   return (
     <div className='container'>
-      {user !== null && <Navigate to='home' />}
+      {user !== null && <Navigate to='/' />}
       <nav className='container__nav'>
         <Link to='/home'>
           <img src='/assets/icons/lofi-logo.gif' alt='' />
@@ -41,10 +41,6 @@ const Login = () => {
           <Link to='/about'>
             <i className='fas fa-info'></i>
             <span>About us</span>
-          </Link>
-          <Link to='/login'>
-            <i className='fas fa-sign-in-alt'></i>
-            <span>Log In</span>
           </Link>
         </div>
       </nav>
