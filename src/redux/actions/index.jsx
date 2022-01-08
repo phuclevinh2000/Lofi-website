@@ -1,5 +1,5 @@
 import { auth, provider } from '../../firebase';
-import { SET_USER, SET_MODE } from '../constantsType/actionType';
+import { SET_USER, SET_MODE, SET_RAIN } from '../constantsType/actionType';
 
 export const setUser = (payload) => ({
   type: SET_USER,
@@ -9,6 +9,11 @@ export const setUser = (payload) => ({
 export const setMode = (payload) => ({
   type: SET_MODE,
   mode: payload,
+});
+
+export const setRain = (payload) => ({
+  type: SET_RAIN,
+  rainMode: payload,
 });
 
 export function signInAPI() {
@@ -49,5 +54,14 @@ export function changeDayNight(currentStatus) {
   else if (currentStatus === 'night') status = 'day';
   return (dispatch) => {
     dispatch(setMode(status));
+  };
+}
+
+export function changeRainStatus(currentStatus) {
+  let rainStatus;
+  if (currentStatus === 'rain') rainStatus = 'clear';
+  else if (currentStatus === 'clear') rainStatus = 'rain';
+  return (dispatch) => {
+    dispatch(setRain(rainStatus));
   };
 }

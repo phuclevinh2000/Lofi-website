@@ -26,7 +26,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     },
   },
   '& .MuiSwitch-thumb': {
-    backgroundColor: theme === 'day' ? '#b47123' : '#001e3c',
+    backgroundColor: theme === 'day' ? '#f3a952' : '#001e3c',
     width: 32,
     height: 32,
     '&:before': {
@@ -50,12 +50,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-const DarkLightSwitch = (props) => {
-  console.log(props.theme);
+const DarkLightSwitch = ({ theme, label }) => {
+  // console.log(props.theme);
   return (
     <FormControlLabel
-      control={<MaterialUISwitch sx={{ m: 1 }} theme={props.theme} />}
-      label='day mode'
+      control={<MaterialUISwitch sx={{ m: 1 }} theme={theme} />}
+      label={label + ` mode`}
       style={{ color: 'white' }}
     />
   );
