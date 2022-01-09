@@ -1,0 +1,121 @@
+.modifier {
+  position: absolute;
+  right: -20px;
+  top: 45%;
+  transform: translateY(-50%);
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 80px;
+  z-index: 11;
+  border-radius: 34px;
+  margin-right: 36px;
+  padding: 10px;
+  color: #4e5054;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: border-radius 0.1s ease-in-out;
+
+  .modifier__icon {
+    cursor: pointer;
+    padding: 14px;
+    // font-size: 3rem;
+    border-top: 2px solid #4e5054;
+
+    .icon.active {
+      color: #f3a952;
+    }
+  }
+
+  .modifier__icon:first-child {
+    border: none;
+  }
+}
+
+.modifier.mood {
+  border-radius: 0 34px 34px 34px;
+}
+
+.modifierBox {
+  position: absolute;
+  right: 100%;
+  top: -40%;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 30px;
+  transform-origin: right top;
+  border-radius: 30px;
+
+  .options {
+    display: flex;
+
+    .item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      background-color: #14141d;
+      margin: 10px;
+      padding: 12px;
+      width: 180px;
+      height: 85px;
+      border-radius: 12px;
+    }
+
+    .item.active {
+      i {
+        color: #f3a952;
+      }
+      color: white;
+    }
+  }
+
+  h4,
+  h5 {
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .volume {
+    margin: 25px 0;
+    color: #f3a952;
+
+    .volume-slider {
+      height: 10px;
+      color: #f3a952;
+      .MuiSlider-rail {
+        color: #4e5054;
+      }
+    }
+  }
+}
+
+.backgroundNoise {
+  display: flex;
+  flex-direction: column;
+
+  .noise-option {
+    p {
+      margin-bottom: 0;
+    }
+    .slider {
+      height: 10px !important;
+      color: #f3a952 !important;
+      width: 180px !important;
+      .MuiSlider-rail {
+        color: #4e5054;
+      }
+    }
+
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+  }
+}

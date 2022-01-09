@@ -3,6 +3,8 @@ import React from 'react';
 import './Home.scss';
 import { useSelector } from 'react-redux';
 import RainToggleButton from '../RainToggleButton/RainToggleButton';
+import ModifierBoard from '../ModifierBoard/ModifierBoard';
+import ReactAudioPlayer from 'react-audio-player';
 
 const Home = () => {
   const daynight = useSelector((state) => state.modeState);
@@ -13,7 +15,7 @@ const Home = () => {
 
   const combineMode = `${mode}-${rainMode}`;
 
-  console.log(combineMode);
+  // console.log(combineMode);
   return (
     <>
       {/* Embedded the background video base on each state */}
@@ -34,7 +36,6 @@ const Home = () => {
       >
         <source src='/assets/video/Night-rainny.mp4' type='video/mp4' />
       </video>
-
       {/* Day */}
       <video
         className={combineMode === 'day-clear' ? 'videoIn' : 'videoOut'}
@@ -52,8 +53,8 @@ const Home = () => {
       >
         <source src='/assets/video/Day-rainny.mp4' type='video/mp4' />
       </video>
-
       <RainToggleButton />
+      <ModifierBoard />
     </>
   );
 };
