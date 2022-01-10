@@ -1,0 +1,9 @@
+.footer {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 10;
+}

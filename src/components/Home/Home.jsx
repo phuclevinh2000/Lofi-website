@@ -4,7 +4,7 @@ import './Home.scss';
 import { useSelector } from 'react-redux';
 import RainToggleButton from '../RainToggleButton/RainToggleButton';
 import ModifierBoard from '../ModifierBoard/ModifierBoard';
-import ReactAudioPlayer from 'react-audio-player';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
   const daynight = useSelector((state) => state.modeState);
@@ -14,6 +14,8 @@ const Home = () => {
   const { rainMode } = rain;
 
   const combineMode = `${mode}-${rainMode}`;
+
+  // const rainButtonClick = (state) => {};
 
   // console.log(combineMode);
   return (
@@ -55,6 +57,7 @@ const Home = () => {
       </video>
       <RainToggleButton />
       <ModifierBoard />
+      <Footer />
     </>
   );
 };

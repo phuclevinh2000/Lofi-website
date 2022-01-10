@@ -50,13 +50,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-const DarkLightSwitch = ({ theme, label }) => {
+const DarkLightSwitch = ({ theme }) => {
   // console.log(props.theme);
   return (
     <FormControlLabel
       control={<MaterialUISwitch sx={{ m: 1 }} theme={theme} />}
-      label={label + ` mode`}
-      style={{ color: 'white' }}
+      label={''}
     />
   );
 };

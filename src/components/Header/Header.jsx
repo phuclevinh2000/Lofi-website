@@ -63,11 +63,11 @@ const Header = () => {
       </div>
       <div className='nav-menu'>
         <div onClick={daynightHandler}>
-          <DarkLightSwitch theme={mode} label={mode} />
+          <DarkLightSwitch theme={mode} />
         </div>
 
         <button onClick={fullscreenHandler} className='fullscreen-btn'>
-          <i className='fas fa-expand-arrows-alt fa-2x'></i>
+          <i className='fas fa-expand fa-lg'></i>
         </button>
       </div>
       <div className='nav-menu'>

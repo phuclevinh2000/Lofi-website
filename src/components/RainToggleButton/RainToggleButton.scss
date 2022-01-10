@@ -12,6 +12,10 @@ $blue: #91ccc2;
   font-size: 1rem;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
 
   .button {
     font-size: 1.5rem;
@@ -35,10 +39,11 @@ $blue: #91ccc2;
   //-----------------------
   .button:hover {
     width: 125px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
     color: $blue;
     transition: 0.3s;
+    border: none;
   }
 
   .button:active {
