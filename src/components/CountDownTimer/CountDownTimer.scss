@@ -1,0 +1,59 @@
+.countdown {
+  height: 150px;
+  .displayTime {
+    height: 80px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .countdownNotRun {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(50%);
+
+    .input {
+      display: flex;
+
+      span {
+        color: white;
+      }
+      .number-input {
+        width: 40px;
+        margin-left: 30px;
+        color: white;
+        background-color: #14141d;
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin-right: 2px;
+      }
+    }
+  }
+  .countdownRunning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(20%);
+  }
+}
+
+.buttonTimer {
+  // padding: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  color: #4e5054;
+  background-color: #14141d;
+  border: 1px solid gray;
+
+  &:hover {
+    background-color: #f3a952;
+    color: white;
+  }
+}
+
+.buttonTimer.setup {
+  margin: 10px 0;
+}

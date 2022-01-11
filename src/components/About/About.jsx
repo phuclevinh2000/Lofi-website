@@ -1,22 +1,11 @@
 import React from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, Navigate } from 'react-router-dom';
-import { signInAPI } from '../../redux/actions';
-import './Login.scss';
+import { Link } from 'react-router-dom';
+import './About.scss';
 
-const Login = () => {
-  const data = useSelector((state) => state.userState);
-  const dispatch = useDispatch();
-  const { user } = data;
-
-  const signInHandler = () => {
-    dispatch(signInAPI());
-  };
-
+const About = () => {
   return (
     <div className='container'>
-      {user !== null && <Navigate to='/' />}
       <nav className='container__nav'>
         <Link to='/home'>
           <img src='/assets/icons/lofi-logo.gif' alt='' />
@@ -44,18 +33,21 @@ const Login = () => {
           </Link>
         </div>
       </nav>
-      <section className='container__section'>
+      <section className='description'>
         <h1>Welcome to the auto genrate lofi music made by Phuc Le.</h1>
-        <h1>Login to explore the feature</h1>
-        <div className='form'>
-          <div className='icon' onClick={signInHandler}>
-            <img src='/assets/icons/google.svg' alt='' />
-            Sign in with Google
-          </div>
-        </div>
+        <h1>The purpose of this application is for learning</h1>
+        <h1>This is a web application inspired by Lofi.co.</h1>
+        <h1>
+          This web application can generate background noises, lofi music, focus
+          mode, and you can set everything
+        </h1>
+        <h1>Hope this will help you guys work more effectively</h1>
+        <Link to='/'>
+          <button className='btn-primary'>Back to homepage</button>
+        </Link>
       </section>
     </div>
   );
 };
 
-export default Login;
+export default About;

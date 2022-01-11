@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import Header from './components/Header/Header';
+import About from './components/About/About';
 import { getUserAuth } from './redux/actions';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           }
         />
         <Route path='/login' element={<Login />} exact />
+        <Route path='/about' element={<About />} exact />
       </Routes>
     </BrowserRouter>
   );

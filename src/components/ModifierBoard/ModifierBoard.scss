@@ -37,6 +37,10 @@
   border-radius: 0 34px 34px 34px;
 }
 
+.modifier.focus {
+  border-radius: 34px 34px 34px 0;
+}
+
 .modifierBox {
   position: absolute;
   right: 100%;
