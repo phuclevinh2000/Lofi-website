@@ -42,7 +42,8 @@
   right: 100%;
   top: -40%;
   background-color: rgba(0, 0, 0, 0.8);
-  width: 350px;
+  width: 370px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   padding: 15px 30px;
@@ -95,10 +96,17 @@
   }
 }
 
+// hide scrollbar but keep the function
+.backgroundNoise::-webkit-scrollbar {
+  display: none;
+}
+
 .backgroundNoise {
   display: flex;
   flex-direction: column;
-
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   .noise-option {
     p {
       margin-bottom: 0;

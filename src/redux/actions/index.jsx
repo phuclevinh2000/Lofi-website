@@ -4,6 +4,7 @@ import {
   SET_MODE,
   SET_RAIN,
   SET_MOOD,
+  SET_VOLUME,
 } from '../constantsType/actionType';
 
 export const setUser = (payload) => ({
@@ -25,6 +26,11 @@ export const setRain = (payload, value) => ({
 export const setMood = (payload) => ({
   type: SET_MOOD,
   moodMode: payload,
+});
+
+export const setVolume = (payload) => ({
+  type: SET_VOLUME,
+  volumeValue: payload,
 });
 
 export function signInAPI() {
@@ -80,5 +86,11 @@ export function changeRainStatus(currentStatus, value) {
 export function changeMoodStatus(currentStatus) {
   return (dispatch) => {
     dispatch(setMood(currentStatus));
+  };
+}
+
+export function changeVolume(currentStatus) {
+  return (dispatch) => {
+    dispatch(setVolume(currentStatus));
   };
 }

@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import { chill } from '../../data/songData';
 import './Footer.scss';
+import Player from '../Player/Player';
 
 const Footer = () => {
+  const [currentSongIndex, setCurrentSongIndex] = useState(1);
+
   return (
     <div className='footer'>
-      <img src='/assets/icons/prev.svg' alt='' />
-
-      {/* <!-- play --> */}
-      <img src='/assets/icons/play.svg' alt='' />
-      {/* <!-- pause --> */}
-      <img src='/assets/icons/pause.svg' alt='' />
-      {/* <!-- next --> */}
-      <img src='/assets/icons/next.svg' alt='' />
+      <div className='author'>
+        <span>Made by Phuc Le, inspired by Lofi.co</span>
+      </div>
+      <div className='controller'>
+        <Player
+          currentSongIndex={currentSongIndex}
+          setCurrentSongIndex={setCurrentSongIndex}
+          songs={chill}
+        />
+      </div>
     </div>
   );
 };
