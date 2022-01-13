@@ -1,6 +1,6 @@
 # What is this project
 
-This project is a clone of Lofi.co and adding some function
+This project is a clone of Lofi.co and adding some function lick todolist, counting as well as remove some part
 
 # Image
  
