@@ -16,6 +16,7 @@
     "react-audio-player": "^0.17.0",
     "react-bootstrap": "^2.1.0",
     "react-dom": "^17.0.2",
+    "react-player": "^2.9.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
